@@ -1,14 +1,14 @@
 CMSC828N: Assignment 1
 
---------------------------------------------------------------------------------------
-If you have any questions about this assignment, please email ren@cs.umd.edu or make appointment.
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------
+If you have any questions about this assignment, please email ren@cs.umd.edu or make an appointment with him. His office number is AVW 3219.
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 In this assignment, you will get some hands-on experience exploring the performance and architectural differences between database system process models. The main challenge of this assignment will be to understand existing code that we are providing you. By reading though this code, we hope you will get a sense of some of the basic implementation differences between thread-based and process-based process models. The amount of code you have to write for this assignment is quite small. In short, we are providing implementations of thread-per worker and process-per-worker process models (see chapter two of the "Architecture of a Database System" paper that we read last week) over a simple database stored as an array in main memory. Your goal in this assignment is to implement the process-pool and thread-pool variants of these process models. Even for these variants, we have written most of the code for you --- we have just left the most interesting parts of the code left for you to implement. However, if you do not understand the thread-per worker and process-per-worker code that we have provided you, you will likely be unable to add the missing code (even though it is small) for the thread-pool and process-pool variants. 
 
 Aside from writing code, this assignment involves running some performance experiments, and answering some questions we ask below.
 
-This assignment --- especially the performance experiments --- should be performed on junkfood machines. Note that you should use twinkie.cs.umd.edu or other machines on junkfood that have 8 CPU Cores. You can debug on other junkfood machines, but please submit your results that running on twinkie machine.
+This assignment --- especially the performance experiments --- should be performed on the junkfood machines. You can code/debug the assignment on skittles, starburst, or twinkie. But please run your official set of performance experiments on twinkie.cs.umd.edu.
 
 Execution models --
 The assignment uses linux's pthreads to implement the
@@ -26,7 +26,7 @@ below).
 
 Synchronization -- 
 This assignment uses semaphores to mediate inter-thread and
-inter-process communication. Semaphores are covered (at least theoretically) in the prerequisites to CPSC 638. We recommend you read through 
+inter-process communication. Semaphores are covered (at least theoretically) in intro to systems programming courses that you hopefully have already taken. We recommend you read through 
 http://pages.cs.wisc.edu/~remzi/Classes/537/Fall2008/Notes/threads-semaphores.txt for some background on semaphores if you have not seen them in the past.
 
 WARNING: Semaphores are a critical part of this assignment. You will
@@ -126,8 +126,8 @@ Please put “killall build/db” in your test scripts for assignment 1, otherwi
 the processes that were spun off by the assignment resulted in hundreds of
 zombie processes on machines. If you could please log into the junkfood machines
 that you were using and make sure that you have killed any db processes that you started, 
-this would allow us to be good citizens on the junkfood and avoid further pissing off the admins.
-We provid test scripts(lowcontention.sh and high contention.sh) and you can use it or make any changes for your own test.
+this would allow us to be good citizens avoid pissing off the admins.
+We have provide test scripts (lowcontention.sh and high contention.sh) that you can use, and you can make any changes you want for your own tests.
 
 Hints -- 
 The header files corresponding to the four execution models contain
